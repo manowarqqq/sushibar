@@ -54,7 +54,7 @@ public class Main {
         List<OrderDetails> orderDetails = new ArrayList();
 
 
-        List<Integer> list = new ArrayList<Integer>();
+        List<Integer> list = new ArrayList();
         int temp=dishTitlesMaxId;
         while (temp> 0) {
             list.add(temp--);
@@ -63,7 +63,7 @@ public class Main {
         for (int i = 0; i < (1 + random.nextInt(4)); i++) {
 
 
-            int current = list.get(RandomId.getRandomId(list.get(list.size() - 1)));
+            int current = list.get(random.nextInt(list.size()));
             OrderDetails od = new OrderDetails(dishTitlesService.findDishTitle(current), (1 + random.nextInt(2)));
             list.remove(Integer.valueOf(current));
             order.addOrderDetails(od);
@@ -74,12 +74,12 @@ public class Main {
     }
 
     public static void main(String[] args) {
-//        for (int i = 0; i < 100; i++) {
+//        for (int i = 0; i < 1; i++) {
 //            addCustomer();
 //        }
 
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 50; i++) {
             addOrder();
         }
 
